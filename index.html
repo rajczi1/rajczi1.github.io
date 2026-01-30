@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Orosz Fanni</title>
+    <meta name="description" content="Ez a weboldal miről szól." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <a class="brand" href="#home" aria-label="Főoldal">
+                <div class="logo" aria-hidden="true">Arcod ide :)</div>
+                <div>
+                    <div style="font-weight:700">Orosz Fanni</div>
+                    <div class="small">Kis rövid mottó esetleg?</div>
+                </div>
+            </a>
+
+            <nav aria-label="Navigáció">
+                <a href="#about">Rólam</a>
+                <a href="#sessions">Időpontok</a>
+                <a href="#topics">Témák</a>
+                <a href="#schedule">Órarend</a>
+                <a href="#contact">Elérhetőség</a>
+            </nav>
+
+            <div style="display:flex;gap:8px;align-items:center">
+                <button class="cta" id="bookBtn">Időpont foglalás</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="home" class="hero" aria-label="Bemutató">
+                <div class="hero-inner">
+                    <h1>Egészség és Egyensúly.</h1>
+                    <p>Íde írhatjuk hogy milyen dolgokkal szeretnél majd foglalkozni meg kb leírni mizu. :)</p>
+                    <div class="hero-actions">
+                        <a class="cta" href="#sessions">Időpontok megnézése</a>
+                        <a class="small" href="#topics">Blog</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" aria-labelledby="Rólam">
+                <h2 id="about-heading">Rólam</h2>
+                <div class="grid cols-2" style="align-items:center">
+                    <div>
+                        <p class="small">Ítt leírod hogy ki vagy, bemutatod mit csinálsz, mesélsz magadról kicsit.</p>
+                        <ul>
+                            <li>Esetleg jóga?</li>
+                            <li>Vegán receptek? :)</li>
+                            <li>Talán filózófia és élettan?</li>
+                        </ul>
+                        <p class="small">Egyéb infó</p>
+                    </div>
+                    <div class="card" style="display:flex;flex-direction:column;align-items:center;">
+                        <div
+                            style="width:140px;height:140px;border-radius:14px;background-image:url('kép');background-size:cover;background-position:center">
+                        </div>
+                        <div style="margin-top:10px;text-align:center">
+                            <strong>Privát és nyílt órák</strong>
+                            <div class="small">Online vagy személyes</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sessions" aria-labelledby="sessions-heading">
+                <h2 id="sessions-heading">Jóga órák</h2>
+                <div class="grid cols-3">
+                    <article class="card">
+                        <div class="session">
+                            <div class="img"
+                                style="background-image:url('kép');">
+                            </div>
+                            <div class="info">
+                                <h3>Drog parti</h3>
+                                <div class="meta">45 perc • Kezdőknek</div>
+                                <p class="small" style="margin-top:8px">Holnap felfogsz kellni is azt se tudod merre vagy, köszönd meg majd nekem!</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;display:flex;gap:8px">
+                            <button class="btn" data-session="Első">Foglalás</button>
+                            <button class="small" onclick="openDetails('ETöbb')">Leírás</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="session">
+                            <div class="img"
+                                style="background-image:url('kép');">
+                            </div>
+                            <div class="info">
+                                <h3>Reggeli iszogatós</h3>
+                                <div class="meta">30 perc • Haladó szintnek</div>
+                                <p class="small" style="margin-top:8px">Jäeger mellé kis whisky, 30 perc és garantált felhányod!</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;display:flex;gap:8px">
+                            <button class="btn" data-session="Morning Energizer">Foglalás</button>
+                            <button class="small" onclick="openDetails('energizer')">Leírás</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="session">
+                            <div class="img"
+                                style="background-image:url('kép');">
+                            </div>
+                            <div class="info">
+                                <h3>Cigi tarhálás</h3>
+                                <div class="meta">60 perc • Kezdőknek</div>
+                                <p class="small" style="margin-top:8px">Szia cica van gazdád? Nincs cigid? Tüzed? Megtanulod hogyan kell profi szinten tarhálni!</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:10px;display:flex;gap:8px">
+                            <button class="btn" data-session="Restorative">Foglalás</button>
+                            <button class="small" onclick="openDetails('restorative')">Leírás</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="topics" aria-labelledby="topics-heading">
+                <h2 id="topics-heading">Blog</h2>
+                <div class="grid cols-3">
+                    <article class="card blog-card">
+                        <img alt="Vegan bowl"
+                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop">
+                        <h3>Egyszerű vegán kaják egy sűrű napra.</h3>
+                        <p class="small">Megmutatom hogy ne gyújtsd fel a konyhát!</p>
+                        <button class="small" onclick="openArticle('vegan')">Olvass tovább</button>
+                    </article>
+
+                    <article class="card blog-card">
+                        <img alt="Meditation"
+                            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop">
+                        <h3>Hogy kell vonat kereket felpumpálni?</h3>
+                        <p class="small">APA MEGJÖTTEK A CIGÁNYOK HOZD A PALLOST!</p>
+                        <button class="small" onclick="openArticle('mental')">Olvass tovább</button>
+                    </article>
+
+                    <article class="card blog-card">
+                        <img alt="Herbs and tea"
+                            src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1200&auto=format&fit=crop">
+                        <h3>Füves tea készítés.</h3>
+                        <p class="small">Ne tekerd, igyad báttya!</p>
+                        <button class="small" onclick="openArticle('tea')">Olvass tovább</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="schedule" aria-labelledby="schedule-heading">
+                <h2 id="schedule-heading">Heti Időbeosztás</h2>
+                <div class="schedule">
+                    <div class="slot card">
+                        <strong>Hét — 18:00</strong>
+                        <div class="small">Füvezés 1 • 45 perc</div>
+                    </div>
+                    <div class="slot card">
+                        <strong>Ked — 07:30</strong>
+                        <div class="small">Füvezés 2 • 45 perc</div>
+                    </div>
+                    <div class="slot card">
+                        <strong>Sze — 19:00</strong>
+                        <div class="small">Füvezés 3 • 45 perc</div>
+                    </div>
+                    <div class="slot card">
+                        <strong>Csü — 10:00</strong>
+                        <div class="small">Füvezés 4 • 45 perc</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Kapcsolat felvétel és időpont foglalás</h2>
+                <div class="grid cols-2" style="align-items:start">
+                    <div class="card">
+                        <form id="contactForm" novalidate>
+                            <label class="small">Név
+                                <input type="text" name="name" id="name" required placeholder="Neved">
+                            </label>
+                            <label class="small">Email
+                                <input type="email" name="email" id="email" required placeholder="Email címed">
+                            </label>
+                            <label class="small">Üzenet
+                                <textarea name="message" id="message" rows="4"
+                                    placeholder="Mesélj a célodról..."></textarea>
+                            </label>
+                            <div style="display:flex;gap:8px">
+                                <button class="btn" type="submit">Küldés</button>
+                            </div>
+                            <div id="formMsg" class="small" aria-live="polite" style="margin-top:8px"></div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="card">
+                            <h3>Árazás (példa)</h3>
+                            <div class="small">Privát 60 perc — €55</div>
+                            <div class="small">Csoportos beugrós — €12</div>
+                            <div class="small">Műhely — €30</div>
+                            <p class="small" style="margin-top:8px">Leárazás meg speciális cuccok ide írva</p>
+                        </div>
+
+                        <div class="card" style="margin-top:12px">
+                            <h3>Elérhetőségek</h3>
+                            <p class="small">Pécs utcáin személyesen megtalálsz, azt kabumm bumm, meg is vagy késelve, szóval ne is merj keresni tesa.</p>
+                            <p class="small">Közösségi Média: <a href="#" style="color:var(--accent)">Instagram</a> • <a href="#"
+                                    style="color:var(--accent)">YouTube</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="small">© <span id="year"></span> Orosz Fanni</div>
+            <div class="small">Weboldalt készítette : <a href="#contact">Rajczi András</a></div>
+        </footer>
+    </div>
+
+    <!-- Simple modals & scripts -->
+    <template id="articleTemplate">
+        <article class="card" style="max-width:760px">
+            <h3></h3>
+            <p class="small"></p>
+            <div style="margin-top:12px">
+                <button class="btn closeBtn">Close</button>
+                <a class="small" href="#contact" style="margin-left:8px">Elérhetőség és időpont foglalás</a>
+            </div>
+        </article>
+    </template>
+
+    <div id="modal" role="dialog" aria-hidden="true"
+        style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,10,0.36);padding:20px;z-index:9999">
+    </div>
+
+    <script>
+        // Basic interactivity for the page
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Booking buttons prefill contact
+        document.querySelectorAll('[data-session]').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const session = e.currentTarget.getAttribute('data-session');
+                document.getElementById('message').value = 'Szia fanni akarok egy: ' + session + '-t foglalni';
+                document.getElementById('name').focus();
+                location.hash = '#contact';
+            });
+        });
+
+        // Book CTA
+        document.getElementById('bookBtn').addEventListener('click', () => location.hash = '#contact');
+
+        // Simple form handling (no backend)
+        document.getElementById('contactForm').addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            const out = document.getElementById('formMsg');
+
+            if (!name || !email) {
+                out.textContent = 'Adj egy nevet és email címet is kérlek.';
+                out.style.color = '#a94442';
+                return;
+            }
+            // Simulate send
+            out.textContent = 'kösz elküldhető.)';
+            out.style.color = 'ZŐD';
+            this.reset();
+        });
+
+        // Simple modal for articles and details
+        const modal = document.getElementById('modal');
+        const template = document.getElementById('articleTemplate');
+
+        function openArticle(key) {
+            let title = 'Article';
+            let text = '';
+            if (key === 'vegan') {
+                title = 'Vega';
+                text = 'Vegaszövi';
+            } else if (key === 'mental') {
+                title = 'Egi';
+                text = 'Egiszövi';
+            } else if (key === 'tea') {
+                title = 'Fű';
+                text = 'Fűszövi';
+            } else {
+                title = 'blog';
+                text = 'jön még.';
+            }
+            showModal(title, text);
+        }
+
+        function openDetails(id) {
+            if (id === 'gentle') showModal('első leír');
+            if (id === 'energizer') showModal('másod leír');
+            if (id === 'restorative') showModal('harmad leír');
+        }
+
+        function showModal(title, text) {
+            modal.innerHTML = '';
+            const node = template.content.cloneNode(true);
+            node.querySelector('h3').textContent = title;
+            node.querySelector('p').textContent = text;
+            modal.appendChild(node);
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            modal.querySelector('.closeBtn').addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+        }
+
+        function hideModal() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            modal.innerHTML = '';
+        }
+
+        // Scroll to anchor smooth behavior
+        (function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(a => {
+                a.addEventListener('click', (e) => {
+                    const id = a.getAttribute('href');
+                    if (id === '#' || id === '') return;
+                    const el = document.querySelector(id);
+                    if (el) {
+                        e.preventDefault();
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // update hash without page jump
+                        history.replaceState(null, '', id);
+                    }
+                });
+            });
+        })();
+
+        // Accessibility: close modal with Esc
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') hideModal();
+        });
+    </script>
+</body>
+
+</html>
+</article>
+</div>

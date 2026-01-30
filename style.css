@@ -1,0 +1,284 @@
+:root {
+    --bg: #fcfbf9;
+    --card: #fff;
+    --accent: #6aa84f;
+    --muted: #6b7280;
+    --glass: rgba(255, 255, 255, 0.6);
+    --maxw: 1100px;
+    color-scheme: light;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #fbfff4 0%, var(--bg) 100%);
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+}
+
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8fc66e, #6aa84f);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(106, 168, 79, 0.14);
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    color: #13310a;
+}
+
+.cta {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 28px 0;
+}
+
+.hero-inner {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    line-height: 1.05;
+}
+
+.hero p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    max-width: 55ch;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Layout sections */
+section {
+    margin: 36px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width:900px) {
+
+    .cols-2,
+    .cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
+/* Cards */
+.card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.card h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Yoga session card */
+.session {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.session .img {
+    width: 76px;
+    height: 76px;
+    border-radius: 10px;
+    background: #eee;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.session .info {
+    flex: 1;
+}
+
+/* Blog list */
+.blog-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Schedule */
+.schedule {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.slot {
+    min-width: 180px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #fff, #fbfff6);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.slot strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+/* Contact */
+form {
+    display: grid;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 22px;
+}
+
+/* small helpers */
+.small {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.center {
+    text-align: center;
+}
